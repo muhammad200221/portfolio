@@ -1,0 +1,6 @@
+{
+  "name": "پۆرتفۆلیۆی کەسی و سیستەمی بەڕێوەبردن",
+  "description": "ماڵپەڕی کەسی مۆدێرن بە زمانی کوردی سۆرانی بە تەواوی تایبەتمەندی پۆرتفۆلیۆ، گەلەری پڕۆژەکان و داشبۆردی بەڕێوەبەر بە فایەربەیس.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

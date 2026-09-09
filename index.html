@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ckb" dir="rtl" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>پۆرتفۆلیۆی کەسی و سیستەمی بەڕێوەبردن</title>
+    <meta name="description" content="ماڵپەڕی کەسی مۆدێرن بە زمانی کوردی سۆرانی بە تەواوی تایبەتمەندی پۆرتفۆلیۆ، گەلەری پڕۆژەکان و داشبۆردی بەڕێوەبەر بە فایەربەیس." />
+    <meta property="og:title" content="پۆرتفۆلیۆی کەسی و سیستەمی بەڕێوەبردن" />
+    <meta property="og:description" content="ماڵپەڕی کەسی مۆدێرن بە زمانی کوردی سۆرانی بە تەواوی تایبەتمەندی پۆرتفۆلیۆ، گەلەری پڕۆژەکان و داشبۆردی بەڕێوەبەر بە فایەربەیس." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+      // GitHub Pages SPA redirect handler
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location));
+
+      (function() {
+        try {
+          var saved = localStorage.getItem('portfolio_theme');
+          if (saved === 'light') {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.classList.add('light');
+            document.documentElement.style.colorScheme = 'light';
+          } else {
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+            document.documentElement.style.colorScheme = 'dark';
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="bg-slate-50 text-slate-900 dark:bg-[#070b14] dark:text-slate-100 font-sans antialiased selection:bg-indigo-500 selection:text-white transition-colors duration-200">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

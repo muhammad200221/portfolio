@@ -1,0 +1,86 @@
+{
+  "entities": {
+    "Profile": {
+      "title": "Profile",
+      "description": "User personal profile, biography and skills",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "title": { "type": "string" },
+        "heroBio": { "type": "string" },
+        "profilePhoto": { "type": "string" }
+      }
+    },
+    "Project": {
+      "title": "Project",
+      "description": "Portfolio showcase project",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "category": { "type": "string" },
+        "coverImage": { "type": "string" },
+        "date": { "type": "string" },
+        "city": { "type": "string" }
+      },
+      "required": ["title", "category", "coverImage"]
+    },
+    "VisitorStats": {
+      "title": "VisitorStats",
+      "description": "Aggregated visitor statistics",
+      "type": "object",
+      "properties": {
+        "count": { "type": "number", "description": "Total number of visits to the portfolio" },
+        "lastVisitedAt": { "type": "number", "description": "Timestamp in milliseconds of the latest visit" }
+      },
+      "required": ["count"]
+    },
+    "Certificate": {
+      "title": "Certificate",
+      "description": "Certifications, accreditations, and achievements",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "issuer": { "type": "string" },
+        "issueDate": { "type": "string" },
+        "credentialId": { "type": "string" },
+        "credentialUrl": { "type": "string" },
+        "image": { "type": "string" },
+        "description": { "type": "string" }
+      },
+      "required": ["title", "issuer", "issueDate"]
+    },
+    "ProjectCategories": {
+      "title": "ProjectCategories",
+      "description": "Custom categories for projects",
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    }
+  },
+  "firestore": {
+    "/settings/profile": {
+      "schema": "Profile",
+      "description": "Portfolio profile settings"
+    },
+    "/settings/project_categories": {
+      "schema": "ProjectCategories",
+      "description": "Portfolio project categories"
+    },
+    "/projects/{projectId}": {
+      "schema": "Project",
+      "description": "User projects showcase"
+    },
+    "/certificates/{certificateId}": {
+      "schema": "Certificate",
+      "description": "User certifications and credentials"
+    },
+    "/stats/{statId}": {
+      "schema": "VisitorStats",
+      "description": "Visitor and analytics metrics"
+    }
+  }
+}
