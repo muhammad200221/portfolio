@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import {
   X,
@@ -20,14 +20,18 @@ interface ProjectModalProps {
 }
 
 export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
+
+  useEffect(() => {
+    setActiveImageIndex(0);
+  }, [project?.id]);
+
   if (!project) return null;
 
   const allImages = [
     project.coverImage,
     ...(project.images || []).filter((img) => img !== project.coverImage),
   ].filter(Boolean);
-
-  const [activeImageIndex, setActiveImageIndex] = useState(0);
 
   // Helper for Google Maps search link
   const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(

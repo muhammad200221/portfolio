@@ -43,7 +43,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ profile, socials
       await sendContactMessage({
         name: name.trim(),
         email: email.trim(),
-        phone: phone.trim() || undefined,
+        phone: phone.trim() || '',
         subject: subject.trim() || 'پەیامی نوێ لە ماڵپەڕەوە',
         message: message.trim(),
       });

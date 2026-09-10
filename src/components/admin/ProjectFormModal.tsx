@@ -97,6 +97,17 @@ export const ProjectFormModal: React.FC<ProjectFormModalProps> = ({
     }
   }, [isOpen, projectToEdit, categories]);
 
+  const availableCategories = useMemo(() => {
+    const list =
+      categories && categories.length > 0
+        ? [...categories]
+        : ['وێبسایت', 'ئەپڵیکەیشن', 'سیستەم', 'دیزاینی UI/UX', 'براندینگ'];
+    if (category && !list.includes(category)) {
+      list.push(category);
+    }
+    return list;
+  }, [categories, category]);
+
   if (!isOpen) return null;
 
   // Handle Cover Image Upload
@@ -213,17 +224,6 @@ export const ProjectFormModal: React.FC<ProjectFormModalProps> = ({
       setSaving(false);
     }
   };
-
-  const availableCategories = useMemo(() => {
-    const list =
-      categories && categories.length > 0
-        ? [...categories]
-        : ['وێبسایت', 'ئەپڵیکەیشن', 'سیستەم', 'دیزاینی UI/UX', 'براندینگ'];
-    if (category && !list.includes(category)) {
-      list.push(category);
-    }
-    return list;
-  }, [categories, category]);
 
   return (
     <AnimatePresence>

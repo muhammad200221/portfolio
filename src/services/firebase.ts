@@ -873,11 +873,13 @@ export async function updateSocials(socials: SocialLink[]): Promise<void> {
 // CONTACT MESSAGES
 // ----------------------------------------------------
 export async function sendContactMessage(msg: Omit<ContactMessage, 'id' | 'createdAt' | 'read'>): Promise<string> {
-  const docRef = await addDoc(collection(db, 'messages'), {
+  const cleanData = cleanFirestoreData({
     ...msg,
+    phone: msg.phone ? msg.phone.trim() : '',
     createdAt: Date.now(),
     read: false,
   });
+  const docRef = await addDoc(collection(db, 'messages'), cleanData);
   return docRef.id;
 }
 

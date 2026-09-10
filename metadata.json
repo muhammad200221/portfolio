@@ -1,6 +1,6 @@
 {
-  "name": "پۆرتفۆلیۆی محمد خالید ڕەشاد   ",
-  "description": "ماڵپەڕی محمد خالید بە زمانی کوردی سۆرانی        .",
+  "name": "پۆرتفۆلیۆی محمد خالید ڕەشاد",
+  "description": "ماڵپەڕی محمد خالید بە زمانی کوردی سۆرانی.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
